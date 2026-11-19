@@ -1,0 +1,14 @@
+{
+  "compositionId": "VISER-Overlay-Demo",
+  "format": "9:16",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationInFrames": 90,
+  "props": {
+    "kicker": "VISER / CREATOR TOOLKIT",
+    "title": "CERITA KUAT.\nVISUAL TAJAM.",
+    "subtitle": "A reusable motion overlay",
+    "accentColor": "#B7FF32"
+  }
+}

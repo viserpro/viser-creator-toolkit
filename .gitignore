@@ -1,0 +1,33 @@
+node_modules/
+out/
+dist/
+.cache/
+.tmp/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+
+# Creator-owned media and project files
+public/media/
+public/private/
+assets/private/
+input/
+output/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.mp3
+*.aac
+*.flac
+*.srt
+*.ass
+*.vtt
+
+# Local editor and machine-specific files
+.vscode/
+.idea/
+*.local
