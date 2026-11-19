@@ -1,35 +1,35 @@
-{
-  "name": "viser-creator-toolkit",
-  "version": "0.3.0",
-  "private": false,
-  "type": "module",
-  "description": "Local-first video creator workspace with FFprobe media intelligence, multi-track rough cuts, script compilation and Remotion overlays.",
-  "license": "MIT",
-  "engines": {
-    "node": ">=22.6.0"
-  },
-  "scripts": {
-    "dev": "remotion studio",
-    "render:overlay": "remotion render src/index.ts VISER-Overlay-Demo out/viser-overlay-demo.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png",
-    "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "dev:app": "vite",
-    "build:app": "tsc --noEmit && vite build",
-    "preview:app": "vite preview",
-    "media:scan": "node scripts/scan-media.mjs"
-  },
-  "dependencies": {
-    "@remotion/cli": "4.0.545",
-    "react": "19.3.1",
-    "react-dom": "19.3.1",
-    "remotion": "4.0.545"
-  },
-  "devDependencies": {
-    "@types/node": "^26.0.0",
-    "@types/react": "19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.3.0",
-    "typescript": "5.9.3",
-    "vite": "^8.3.8"
-  }
+﻿{
+    "name":  "viser-creator-toolkit",
+    "version":  "0.3.0",
+    "private":  false,
+    "type":  "module",
+    "description":  "Cross-platform local-first foundation for an autonomous AI video production studio.",
+    "license":  "MIT",
+    "engines":  {
+                    "node":  "\u003e=22.6.0"
+                },
+    "scripts":  {
+                    "dev":  "remotion studio",
+                    "render:overlay":  "remotion render src/index.ts VISER-Overlay-Demo out/viser-overlay-demo.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png",
+                    "typecheck":  "tsc --noEmit",
+                    "test":  "node --experimental-strip-types --test tests/*.test.ts",
+                    "dev:app":  "vite",
+                    "build:app":  "tsc --noEmit \u0026\u0026 vite build",
+                    "preview:app":  "vite preview",
+                    "media:scan":  "node scripts/scan-media.mjs"
+                },
+    "dependencies":  {
+                         "@remotion/cli":  "4.0.545",
+                         "react":  "19.3.1",
+                         "react-dom":  "19.3.1",
+                         "remotion":  "4.0.545"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^26.0.0",
+                            "@types/react":  "19.3.0",
+                            "@types/react-dom":  "^19.3.0",
+                            "@vitejs/plugin-react":  "^6.3.0",
+                            "typescript":  "5.9.3",
+                            "vite":  "^8.3.8"
+                        }
 }

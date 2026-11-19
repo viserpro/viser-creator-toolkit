@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml)
 
-A local-first short-form video production workspace. VISER turns scripts and creator guidebooks into scene plans, inventories real media with FFprobe, and prepares editable multi-track rough cuts before final finishing in CapCut.
+A cross-platform, local-first foundation for VISER Autonomous Studio: an independent Windows and macOS AI video production application. The current 0.3.0 release provides script workflows, FFprobe media intelligence and an early multi-track timeline foundation.
 
 ## Current capabilities · 0.3.0
 
@@ -73,10 +73,11 @@ Transparent overlay output: `out/viser-overlay-demo.mov`. Verify codec and alpha
 ## Project principles
 
 1. Keep source media, scripts, voiceovers, credentials, and rendered outputs out of Git unless redistribution rights are explicit.
-2. Media scanning and editing metadata are local-first; VISER does not upload the user's footage.
-3. Preview before full-quality rendering.
-4. Preserve source files; write generated files to `out/`.
-5. Make automation reproducible and keep final export decisions with the creator.
+2. Local-first by default; cloud AI is optional and user-configured.
+3. Preserve source files; generated outputs are written to managed project/output folders.
+4. AI proposes actions; the validated VISER Core Engine executes them.
+5. Keep Windows and macOS behavior aligned through shared schemas and platform adapters.
+6. Make automation reproducible, inspectable, recoverable and permission-scoped.
 
 ## OpenCut reference and licensing
 
@@ -93,6 +94,6 @@ VISER's original code and documentation are licensed under MIT; see [LICENSE](LI
 - Timeline controls are basic move-by-one-second, split-at-midpoint, trim-by-0.25-second, and remove operations. Drag-and-drop, ripple editing, undo/redo, waveform rendering, thumbnail extraction, and playback are not implemented yet.
 - The workspace preview is a scene-layout preview, not a source-footage player.
 - Word cues and SRT timing are estimates, not speech recognition or voiceover alignment.
-- Face-aware reframing, proxy generation, automatic subtitle alignment, and CapCut timeline insertion remain future work.
+- Face-aware reframing, proxy generation, automatic subtitle alignment, desktop packaging, native preview and final rendering remain future work.
 
 See [CHANGELOG.md](CHANGELOG.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
