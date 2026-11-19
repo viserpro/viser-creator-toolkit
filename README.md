@@ -2,37 +2,51 @@
 
 [![CI](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml)
 
-**From script to video.** A small, reusable toolkit for independent creators who want repeatable short-form video workflows.
+**From script to video.** A modular toolkit for repeatable short-form video production, built around Remotion and a creator-defined style guide.
 
-VISER is being developed in public. The first release focuses on a reusable vertical motion-graphics overlay built with Remotion. Script parsing, asset validation, and additional render workflows will be added only after they are documented and tested.
+## Current capabilities
 
-## What works in this starter
-
-- A reusable 1080 × 1920, 30 fps overlay composition.
-- Editable title, kicker, and supporting text through composition props.
-- Transparent-background rendering to a ProRes 4444 MOV (when the local FFmpeg build supports the requested pixel format).
-- A separate local preview workflow for your own footage can be added without publishing that footage.
+- Reusable 1080 × 1920 transparent Remotion overlay rendered as ProRes 4444 MOV.
+- Typed creator guidebook covering brand, format, pacing, hook, subtitles, motion, colors, audio, story beats, avoid-list, references, and tools.
+- Script compiler: one non-empty line becomes one scene, with frame timing, story-beat labels, subtitle wrapping, approximate word cues, motion presets, and warnings.
+- Asset manifest preflight for duplicate paths, file size, media extension, duration, and expected audio/video stream metadata.
+- Audio mix planner for voice priority, music level, fade timing, SFX policy, and warnings.
+- Example guidebook and sample script.
+- Automated tests for core logic.
 
 ## Quick start
 
-Requirements: Node.js 20.19+ (or a supported newer LTS/current release), npm, and a compatible FFmpeg build.
+Requirements: Node.js 22.6+ and npm. Remotion's own license and eligibility rules still apply.
 
 ```powershell
-npm install
-npm run dev
+npm.cmd install
+npm.cmd run dev
 ```
 
-Render the demo overlay:
+Run checks:
 
 ```powershell
-npm run render:overlay
+npm.cmd run typecheck
+npm.cmd test
 ```
 
-The output is written to `out/viser-overlay-demo.mov`. Check the codec and alpha channel with `ffprobe` before compositing.
+Render the transparent overlay:
+
+```powershell
+npm.cmd run render:overlay
+```
+
+Output: `out/viser-overlay-demo.mov`. Verify codec and alpha with FFprobe before compositing.
+
+## Compile a script
+
+Import `defaultGuide` and `compileScript` from `src/core`. Provide a guidebook and script where each line represents one visual scene. The default scene duration is controlled by `video.maxSceneSeconds` (3 seconds in the example). Word cue timing is estimated by character weight; it is not speech recognition and must be checked against the actual voiceover.
+
+See [docs/WORKFLOW.md](docs/WORKFLOW.md), [examples/guidebook.viser.json](examples/guidebook.viser.json), and [examples/script.txt](examples/script.txt).
 
 ## Project principles
 
-1. Keep source media, scripts, voiceovers, fonts, credentials, and rendered outputs out of Git unless the owner has explicit redistribution rights.
+1. Keep source media, scripts, voiceovers, fonts, credentials, and rendered outputs out of Git unless redistribution rights are explicit.
 2. Preview before full-quality rendering.
 3. Preserve source files; write generated files to `out/`.
 4. Make workflows reproducible and understandable to non-developer creators.
@@ -40,14 +54,14 @@ The output is written to `out/viser-overlay-demo.mov`. Check the codec and alpha
 
 ## Licensing
 
-VISER's original code and documentation are licensed under MIT; see [LICENSE](LICENSE). Third-party dependencies retain their own licenses. In particular, Remotion is source-available under its own license, not an OSI-approved open-source license. Read [docs/LICENSING.md](docs/LICENSING.md) before using or redistributing a workflow based on it.
+VISER's original code and documentation are licensed under MIT; see [LICENSE](LICENSE). Third-party dependencies retain their own licenses. Remotion is source-available under its own license, not an OSI-approved open-source license. Read [docs/LICENSING.md](docs/LICENSING.md) before use or redistribution.
 
-VISER is not affiliated with or endorsed by Remotion.
+VISER is not affiliated with or endorsed by Remotion. Third-party reference PDFs used during development are not included or reproduced in this repository.
+
+## Known limitations
+
+This release does not automate CapCut timeline insertion, transcript-to-audio alignment, voice activity detection, face-aware safe-area detection, automatic crop tracking, or final export. Asset preflight validates supplied metadata and does not probe files itself. The audio planner produces a plan; it does not process audio.
 
 ## Status
 
-This is an early public-development scaffold, not a complete script-to-video product. See [CHANGELOG.md](CHANGELOG.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
-
-## Contributing
-
-Bug reports, reproducible examples, documentation fixes, and small focused pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+Early public development. See [CHANGELOG.md](CHANGELOG.md) and [docs/ROADMAP.md](docs/ROADMAP.md).

@@ -1,16 +1,16 @@
 {
   "name": "viser-creator-toolkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
-  "description": "Reusable short-form video motion graphics workflows for independent creators.",
+  "type": "module",
+  "description": "Reusable short-form video production toolkit: guidebooks, script compilation, asset preflight, audio planning and Remotion overlays.",
   "license": "MIT",
-  "engines": {
-    "node": ">=20.19.0"
-  },
+  "engines": { "node": ">=22.6.0" },
   "scripts": {
     "dev": "remotion studio",
     "render:overlay": "remotion render src/index.ts VISER-Overlay-Demo out/viser-overlay-demo.mov --codec=prores --prores-profile=4444 --pixel-format=yuva444p10le --image-format=png",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "dependencies": {
     "@remotion/cli": "4.0.545",
@@ -19,6 +19,7 @@
     "remotion": "4.0.545"
   },
   "devDependencies": {
+    "@types/node": "^26.0.0",
     "@types/react": "19.3.0",
     "typescript": "5.9.3"
   }

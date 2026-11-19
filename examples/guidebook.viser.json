@@ -1,0 +1,117 @@
+{
+  "$comment": "Original VISER example profile. Customize for your brand; not copied from a third-party guidebook.",
+  "brand": {
+    "name": "VISER",
+    "handle": "@viserclip",
+    "niche": "short-form educational clips",
+    "audience": "Indonesian viewers aged 22-55",
+    "platforms": [
+      "TikTok",
+      "Instagram Reels",
+      "YouTube Shorts"
+    ],
+    "tone": "clear, concise, conversational"
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "targetSeconds": 45,
+    "maxSceneSeconds": 3,
+    "codec": "prores4444"
+  },
+  "pacing": {
+    "cutStyle": "purposeful portrait reframing and fast cuts",
+    "maxPauseSeconds": 0.3,
+    "oneIdeaPerScene": true
+  },
+  "hook": {
+    "preferredTypes": [
+      "curiosity gap",
+      "surprising fact",
+      "direct question"
+    ],
+    "maxWords": 10,
+    "visualTreatment": "high-contrast opening title and controlled punch-in"
+  },
+  "subtitles": {
+    "mode": "word-by-word",
+    "maxWordsPerLine": 3,
+    "fontFamily": "Arial",
+    "fontSize": 64,
+    "color": "#FFFFFF",
+    "highlightColor": "#B7FF32",
+    "strokeColor": "#080808",
+    "strokeWidth": 4,
+    "verticalPosition": "bottom"
+  },
+  "motion": {
+    "frequencySeconds": 3,
+    "kinds": [
+      "text-card",
+      "kinetic-type",
+      "icon"
+    ],
+    "enter": "spring",
+    "exit": "fade",
+    "defaultDurationSeconds": 2
+  },
+  "colors": {
+    "primary": "#101214",
+    "accent": "#B7FF32",
+    "secondaryAccent": "#FFC857",
+    "background": "#101214",
+    "text": "#FFFFFF",
+    "mutedText": "#C7CDD1"
+  },
+  "audio": {
+    "musicStyle": "cinematic ambient",
+    "musicBelowVoiceDb": -20,
+    "fadeInSeconds": 0.5,
+    "fadeOutSeconds": 1,
+    "sfxPolicy": "SFX only for emphasis, never competing with narration",
+    "peakLimitDb": -1
+  },
+  "storyBeats": [
+    {
+      "name": "Hook",
+      "startSeconds": 0,
+      "endSeconds": 3
+    },
+    {
+      "name": "Context",
+      "startSeconds": 3,
+      "endSeconds": 10
+    },
+    {
+      "name": "Development",
+      "startSeconds": 10,
+      "endSeconds": 27
+    },
+    {
+      "name": "Takeaway",
+      "startSeconds": 27,
+      "endSeconds": 40
+    },
+    {
+      "name": "Closing",
+      "startSeconds": 40,
+      "endSeconds": 45
+    }
+  ],
+  "avoid": [
+    "watermarks from source clips",
+    "text covering faces",
+    "unlicensed music or footage",
+    "motion without narrative purpose",
+    "overloaded subtitles"
+  ],
+  "creatorReferences": [],
+  "tools": {
+    "recording": "Curated source clips",
+    "editor": "CapCut Desktop",
+    "motion": "Remotion",
+    "audio": "CapCut / FFmpeg",
+    "fontSource": "Licensed local fonts"
+  }
+}
