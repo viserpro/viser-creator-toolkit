@@ -1,5 +1,7 @@
 # VISER Creator Toolkit
 
+[![CI](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml)
+
 **From script to video.** A small, reusable toolkit for independent creators who want repeatable short-form video workflows.
 
 VISER is being developed in public. The first release focuses on a reusable vertical motion-graphics overlay built with Remotion. Script parsing, asset validation, and additional render workflows will be added only after they are documented and tested.
