@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 - Creator Workspace
+
+- Added a responsive local-first browser workspace for script editing and guidebook import.
+- Connected the UI to the existing guidebook validator and script compiler.
+- Added scene storyboard selection, scene preview, project JSON export, and scene-based SRT export.
+- Added workspace documentation, Vite build scripts, and CI production-build validation.
+- Clarified that preview and subtitle timing are estimates, not source-footage rendering or speech recognition.
+
 ## 0.2.0 - Creator workflow foundation
 
 - Added typed creator guidebook model and validation.

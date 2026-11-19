@@ -13,6 +13,12 @@
 - Asset manifest preflight and audio mix planning.
 - Example profile, workflow documentation, and automated tests.
 
+## 0.2.1 - Creator Workspace
+- Local-first browser UI for script and guidebook input.
+- Scene compilation, storyboard review, and scene preview.
+- JSON project and SRT subtitle export.
+- Responsive desktop and mobile layouts.
+
 ## 0.3.0 - Media intelligence
 - FFprobe-backed media inventory and metadata extraction.
 - Missing-file and duplicate-asset detection from real folders.
