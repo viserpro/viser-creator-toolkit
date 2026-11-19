@@ -1,0 +1,26 @@
+[package]
+name = "viser-studio"
+version = "0.4.0"
+description = "Cross-platform autonomous AI video production studio"
+authors = ["VISER Project"]
+license = "MIT"
+repository = "https://github.com/viserpro/viser-creator-toolkit"
+edition = "2024"
+rust-version = "1.90"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.6" }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.12.7" }
+tauri-plugin-log = "2"
+tauri-plugin-dialog = "2"

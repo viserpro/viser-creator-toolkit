@@ -10,8 +10,13 @@ permissions:
   contents: read
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
+  web-and-core:
+    name: Web and core validation (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -19,7 +24,9 @@ jobs:
           node-version: 24
           cache: npm
           package-manager-cache: false
+      - uses: dtolnay/rust-toolchain@stable
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
       - run: npm run build:app
+      - run: cargo check --manifest-path src-tauri/Cargo.toml

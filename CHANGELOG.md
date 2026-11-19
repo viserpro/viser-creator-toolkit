@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 - Cross-platform desktop foundation (in progress)
+
+- Added Tauri 2 desktop scaffold for Windows and macOS.
+- Added native runtime information and local folder media discovery commands.
+- Added native folder picker and read-only media library panel.
+- Added Windows NSIS and macOS DMG bundle targets and app identity.
+- Added Windows/macOS CI matrix for frontend and Rust validation.
+- Added explicit 0.4.0 status documentation and recorded the remaining native toolchain blocker.
+
+
 ## 0.3.0 - Media Intelligence and timeline foundation
 
 - Added a local FFprobe scanner for video, audio, and image assets.

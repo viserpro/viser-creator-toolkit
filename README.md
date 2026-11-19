@@ -1,16 +1,18 @@
-# VISER Creator Toolkit
+# VISER Autonomous Studio
 
 [![CI](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/viserpro/viser-creator-toolkit/actions/workflows/ci.yml)
 
-A cross-platform, local-first foundation for VISER Autonomous Studio: an independent Windows and macOS AI video production application. The current 0.3.0 release provides script workflows, FFprobe media intelligence and an early multi-track timeline foundation.
+A cross-platform, local-first foundation for VISER Autonomous Studio: an independent Windows and macOS AI video production application. The 0.4.0 development line adds a Tauri 2 desktop shell and native local-media discovery on top of the 0.3.0 script, media-intelligence and timeline foundation.
 
-## Current capabilities · 0.3.0
+## Current capabilities · 0.4.0 development foundation
 
 - Creator Workspace for script editing, guidebook import, scene compilation, storyboard review, and JSON/SRT export.
 - FFprobe media scanner for video, audio, and image folders, including duration, codec, resolution, FPS, audio streams, sample rate, channels, file size, and probe failures.
 - Optional SHA-256 duplicate-content detection.
 - Media inventory JSON report that can be imported into the workspace.
-- OpenCut-inspired media bin and multi-track timeline concepts: separate video, overlay, and audio tracks; non-destructive source trims; clip move, split, and remove; rough-cut assembly.
+- Early multi-track timeline model: separate video, overlay, and audio tracks; non-destructive source trims; clip move, split, and remove; rough-cut assembly.
+- Tauri 2 desktop scaffold for Windows and macOS.
+- Native runtime detection and read-only local media folder discovery in the desktop shell.
 - Typed guidebook validation, subtitle wrapping, approximate word cues, story-beat labels, motion presets, and warnings.
 - Audio mix planning and transparent Remotion ProRes 4444 overlay rendering.
 
@@ -25,7 +27,7 @@ npm.cmd install
 npm.cmd run dev:app
 ```
 
-Open `http://127.0.0.1:4173`.
+Open `http://127.0.0.1:4173` for browser preview. To run the Windows desktop shell after installing the Tauri prerequisites, use `npm.cmd run desktop:dev`. See [Tauri prerequisites](https://tauri.app/start/prerequisites/) and [docs/0.4.0-STATUS.md](docs/0.4.0-STATUS.md).
 
 Start Remotion Studio separately:
 
@@ -92,8 +94,11 @@ VISER's original code and documentation are licensed under MIT; see [LICENSE](LI
 - Rough cut is an editable timeline manifest, not a final rendered video and not a CapCut draft.
 - Video clips are initially placed sequentially; audio clips start at timeline zero and require manual arrangement.
 - Timeline controls are basic move-by-one-second, split-at-midpoint, trim-by-0.25-second, and remove operations. Drag-and-drop, ripple editing, undo/redo, waveform rendering, thumbnail extraction, and playback are not implemented yet.
-- The workspace preview is a scene-layout preview, not a source-footage player.
+- The workspace preview is a scene-layout preview, not a source-footage player. The native media browser currently lists file metadata only; it does not yet probe media or generate thumbnails.
 - Word cues and SRT timing are estimates, not speech recognition or voiceover alignment.
-- Face-aware reframing, proxy generation, automatic subtitle alignment, desktop packaging, native preview and final rendering remain future work.
+- Windows native Rust build is awaiting a complete Windows SDK Debugging Tools/linker setup; the current local `cargo check` fails because `dbghelp.lib` is missing.
+- Native app launch, macOS native build, playback, thumbnails, SQLite persistence, interactive timeline, proxy generation, automatic subtitle alignment and final rendering remain future work.
+
+See [docs/0.4.0-STATUS.md](docs/0.4.0-STATUS.md) for the exact implementation status and blockers.
 
 See [CHANGELOG.md](CHANGELOG.md) and [docs/ROADMAP.md](docs/ROADMAP.md).
